@@ -98,7 +98,7 @@ export const searchBlog =  async (req, res ) => {
  
 const blogData = await dataRetrieval();
 if(!blogData){
-Logger.error(`no BlogData has been found , error : ${error.message}`);
+Logger.error(`no BlogData has been found`);
 }
   const query = req.query.query; // Get the query parameter
 
@@ -107,7 +107,7 @@ Logger.error(`no BlogData has been found , error : ${error.message}`);
 };
 
   if (!query) {
-    Logger.error(`Query parameter is missing. , ${error.message}`)
+    Logger.error(`Query parameter is missing.`)
     res.status(400).json({ error: 'Query parameter is missing.' });
     return;
   }
